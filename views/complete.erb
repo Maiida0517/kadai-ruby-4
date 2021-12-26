@@ -41,7 +41,7 @@
         <% name = params['name'] %>
         <% mail = params['mail'] %>
         <% tel = params['tel'] %>
-        <% content = params['content'] %>
+        <% content = params['content'].gsub(/\r\n|\r|\n/, "<br>") %>
         <table class="table">
           <tr>
             <th class="text-left">会社名</th>
@@ -55,7 +55,7 @@
             <th class="text-left">メール</th>
             <td class="text"><%= mail %></td>
           </tr>
-        　<tr>
+          <tr>
             <th class="text-left">電話番号</th>
             <td class="text"><%= tel %></td>
           </tr>
